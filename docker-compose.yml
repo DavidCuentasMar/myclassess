@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    environment:
+      - ENV_1=ENV_1
+    expose:
+      - 8080
+    
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
